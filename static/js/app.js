@@ -6,7 +6,7 @@ function changeLabel() {
 
 function addResult(theCurrency, theTotal, theDate) {
     document.getElementById("result").innerHTML = '<div class="card pt-2">' +
-        '<h5>' + theCurrency + theTotal + '</h5>' +
+        '<h5>' + theCurrency + " " + theTotal + '</h5>' +
         '<p style="font-size: 12px; color: gray;">Data on: ' + theDate + '</p>' +
         '</div>'
 }
