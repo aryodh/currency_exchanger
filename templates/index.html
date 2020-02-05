@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="padding: 30px; align-items: center;">
+            <div class="card">
+                <div class="head-line">
+                    <h4>Currency Exchanger</h4>
+                    <hr />
+                    <img src="/static/images/asset.png" class="asset" alt="">
+                    <div class="form-row align-items-center px-4">
+                        <div class="col-md-5 my-1">
+                            <select class="custom-select mr-sm-2" id="from">
+                                <option selected>From</option>
+                                {% for i in lis_cur %}
+                                <option value={{ i }}>{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="https://img.icons8.com/plasticine/2x/arrow.png" style="width: 30px;" alt="">
+                        </div>
+                        <div class="col-md-5 my-1">
+                            <select class="custom-select mr-sm-2" id="to">
+                                <option selected>To</option>
+                                {% for i in lis_cur %}
+                                <option value={{ i }}>{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2 mt-3 px-4">
+                        <div class="input-group-prepend">
+                            <div id='fromLabel' class="input-group-text"></div>
+                        </div>
+                        <input type="number" class="form-control" id="total" placeholder="1234">
+                    </div>
+                    <div class="px-4 mt-3 mb-4">
+                        <button type="button" id="convert" class="btn btn-primary btn-lg btn-block">Convert</button>
+                    </div>
+                    <div class="px-4 mb-4">
+                        <div id="result">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
+
+<style>
+    .head-line {
+        margin-top: 32px;
+        text-align: center;
+    }
+
+    body {
+        background-image: url('https://www.freepptbackgrounds.net/wp-content/uploads/2014/05/Global-Finance-PPT-Backgrounds.jpg');
+        overflow-x: hidden;
+    }
+
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .asset {
+        width: 75%;
+    }
+</style>
